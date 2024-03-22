@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Blog - Dashboard</title>
+
+  </head>
+  <body>
+    <h1 class="dashboard-title">Dashboard</h1>
+
+    <div class="user-posts">
+      {{#if userPosts}}
+        <h2 class="your-posts">Your Posts:</h2>
+        <ul>
+          {{#each userPosts}}
+            <li>
+              <h3>{{title}}</h3>
+              <p>{{content}}</p>
+              <p>Date: {{createdAt}}</p>
+              <a href="/edit-post/{{id}}">Edit</a>
+              <a href="/delete-post/{{id}}">Delete</a>
+            </li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <p class="no-posts">No posts found.</p>
+      {{/if}}
+    </div>
+
+    <div class="button-container">
+      <button id="new-post" class="button is-link is-medium ml-4">
+        <a class="has-text-white" href="/new-post">New Post</a></button>
+      <button id="logout" class="button is-link is-medium ml-4"><a
+          class="has-text-white"
+          href="/logout"
+        >Log out</a></button>
+    </div>
+  </body>
+</html>
