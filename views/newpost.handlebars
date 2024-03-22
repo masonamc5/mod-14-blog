@@ -1,0 +1,29 @@
+<!-- views/newpost.handlebars -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post</title>
+</head>
+
+<body>
+    <h1 class="newpost-header">Create a New Post</h1>
+    <form class="post-form" action="/dashboard/newpost" method="POST">
+        <div>
+            <label class="post-title" for="title">Title:</label>
+            <br>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div>
+            <label class="post-content" for="content">Content:</label>
+            <br>
+            <textarea id="content" name="content" rows="8" required></textarea>
+        </div>
+        <button class="button is-link" type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
