@@ -1,0 +1,113 @@
+.welcome-statement {
+  font-size: 30px;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+}
+
+.blog-header {
+  font-size: 40px;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.dashboard-title {
+  font-size: 30px;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+
+.your-posts {
+    font-size: 18px;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.navbar-header {
+  font-size: 30px;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+footer {
+    position: fixed;
+    bottom: 5px;
+    
+}
+
+footer p {
+    font-size: 20px;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+.intro {
+    font-size: 20px;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+.no-posts {
+    font-size: 20px;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+.your-posts {
+    font-size: 20px;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+.button-container {
+    text-align: right;
+    padding: 10px;
+    color: #ffffff;
+}
+
+#new-post {
+    font-size: 20px;
+    color: #ffffff;
+    padding: 10px;
+    text-align: right;
+}
+
+#logout {
+    font-size: 20px;
+    color: #ffffff;
+    padding: 10px;
+    text-align: right;
+    
+}
+
+.newpost-header {
+    font-size: 30px;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+.post-title {
+    font-size: 20px;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+.post-content {
+    font-size: 20px;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+.post-form {
+    text-align: center;
+    padding: 10px;
+}
