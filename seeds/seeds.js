@@ -1,16 +1,15 @@
 const sequelize = require('../config/connection');
-const Admin = require('../models/Admin');
-const Product = require('../models/Product');
+const { User, Post, Comment } = require('../models');
 
-const adminData = require('./adminData.json');
-const productData = require('./productData.json');
+const users = require('./users.json');
+const blog = require('./blog.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  for (const user of adminData) {
+  for (const user of users) {
     try {
-      await Admin.create({
+      await User.create({
         ...user,
       });
     } catch (error) {
@@ -19,9 +18,9 @@ const seedDatabase = async () => {
   }
   console.log('synced users');
 
-  for (const product of productData) {
+  for (const product of blog) {
     try {
-      await Product.create({
+      await Post.create({
         ...product,
       });
     } catch (error) {
