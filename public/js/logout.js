@@ -1,6 +1,6 @@
 const updateLogoutButtonDisplay = async () => {
     try {
-      const response = await fetch("/api/users/login-state");
+      const response = await fetch("/user/login-state");
       if (response.ok) {
         const { loggedIn } = await response.json();
         const logoutBtn = document.getElementById("logoutBtn");
