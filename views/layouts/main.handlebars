@@ -1,28 +1,61 @@
-<html lang='en'>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+>
+</head>
+<body>
+    <header>
+        
+        <nav class="navbar" role="navigation" aria-label="main navigation">
 
-  <head>
-    <meta charset='utf-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1' />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-    <title>Blog</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, viewport-fit=cover' />
+    <h1 class="blog-header">Tech Blog</h1>
 
-    <link rel='stylesheet' href='/public/css/style.css' />
-  </head>
-  <header>
-    <a href='/'><h1>Blog</h1></a>
-    <P class='subheading'>The blog of the ages.</P>
-    <span class='menu-span'>
-      <menu class='primary-menu'>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-header navbar-end">
+      <a href="/" class="navbar-item">
+        Home
+      </a>
+
+      <a href="/dashboard"class="navbar-item">
+        Dashboard
+      </a>
+
+      {{#if loggedIn}}
+
       
-        <button class='logout-button'id="logoutBtn">Logout</button>
-      </menu>
-    </span>
-  </header>
-  <body>
-    {{{body}}}
-  </body>
-    <script src='/js/login.js'></script>
-    <script src='/js/logout.js'></script>
+        <a href="/logout" class="navbar-link">
+          Logout
+        </a>
 
+    {{else}}
+        
+          <a href="/login" class="navbar-item">
+            Login
+          </a>
+          <a href="/signup" class="navbar-item">
+            SignUp
+          </a>
+          
+          {{/if}}
+       
+    </div>
+  </div>
+</nav>
+        
+    </header>
+
+    <main>
+        {{{body}}} 
+
+    <footer>
+        <p>&copy; 2021 Tech Blog. All rights reserved.</p>
+    </footer>
+</body>
 </html>
