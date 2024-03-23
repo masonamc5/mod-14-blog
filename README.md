@@ -1,4 +1,4 @@
-# mod-14-blog
+## Tech Blog
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
