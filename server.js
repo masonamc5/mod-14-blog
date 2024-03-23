@@ -26,13 +26,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use('/dashboard/newpost', dashboardRoutes);
 app.use("/", homeRoutes);
 app.use("/user", userRoutes);
-app.use("/dashboard", dashboardRoutes);
+app.use("/dashboard", dashboardRoutes); 
+
 
 app.use((req, res, next) => {
   res.locals.loggedIn = req.session.logged_in || false;
   next();
+});
+
+app.get('/dashboard/new-post', (req, res) => {
+  res.render('newpost'); 
 });
 
 app.get("/", (req, res) => {

@@ -24,10 +24,6 @@ router.get("/dashboard", (req, res) => {
   res.render("dashboard");
 });
 
-router.get("/new-post", (req, res) => {
-  res.render("newpost");
-});
-
 router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
     if (err) {
