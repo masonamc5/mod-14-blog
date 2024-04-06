@@ -1,46 +1,15 @@
-{
-    "posts": [
-      {
-        "id": 1,
-        "title": "Introduction to MVC Architecture",
-        "content": "MVC (Model-View-Controller) is a design pattern...",
-        "user": {
-          "id": 1,
-          "username": "john_doe"
-        },
-        "createdAt": "2024-03-15T08:00:00Z",
-        "comments": [
-          {
-            "id": 1,
-            "content": "Great explanation!",
-            "user": {
-              "id": 2,
-              "username": "jane_smith"
-            },
-            "createdAt": "2024-03-16T10:00:00Z"
-          },
-          {
-            "id": 2,
-            "content": "I have a question...",
-            "user": {
-              "id": 3,
-              "username": "sam_jones"
-            },
-            "createdAt": "2024-03-17T12:00:00Z"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Using Handlebars.js with Express",
-        "content": "Handlebars.js is a powerful templating engine...",
-        "user": {
-          "id": 2,
-          "username": "jane_smith"
-        },
-        "createdAt": "2024-03-16T09:00:00Z",
-        "comments": []
-      }
-    ]
+
+[
+  {
+    "title": "Music Near Me",
+    "content": "A mobile app that will send you notifications whenever a concert is playing in your area."
+  },
+  {
+    "title": "The Ultimate Tech Quiz",
+    "content": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!"
+  },
+  {
+    "title": "Roll 'Em Up",
+    "content": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
   }
-  
+]

@@ -11,25 +11,18 @@
 <body>
     <h1 class="dashboard-title">Dashboard</h1>
 
-    <div class="user-posts">
-        {{#if posts}}
-        <h2 class="your-posts">Your Posts:</h2>
-        <ul>
-            {{#each posts}}
-            <li>
-                <h3>{{title}}</h3>
-                <p>{{content}}</p>
-            </li>
-            {{/each}}
-        </ul>
-        {{else}}
-        <p class="no-posts">No posts found.</p>
-        {{/if}}
-    </div>
+    <div class="posts list-group">
+  {{#each posts}}
+  <a class="list-item flex-row justify-space-between" href="/dashboard/edit/{{id}}">
+    <span>{{title}}</span>
+   
+  </a>
+  {{/each}}
+</div>
 
     <div class="button-container">
         <button id="new-post" class="button is-link is-medium ml-4">
-            <a class="has-text-white" href="/dashboard/new-post">New Post</a>
+            <a class="has-text-white" href="/new">New Post</a>
         </button>
         <button id="logout" class="button is-link is-medium ml-4">
             <a class="has-text-white" href="/logout">Log out</a>

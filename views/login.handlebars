@@ -1,40 +1,19 @@
-<div class="login-wrapper">
-  <div class="login-header">
+<div class="card">
+  <div class="card-header">
     <h2>Login</h2>
   </div>
-  <div class="control">
-    <form id="login-form">
-      <div class="field">
-        <p class="control has-icons-left has-icons-right">
-          <input id="email" class="input" type="email" placeholder="Email" />
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
-          </span>
-        </p>
-      </div>
-      <div class="field">
-        <p class="control has-icons-left">
-          <input
-            id="password"
-            class="input"
-            type="password"
-            placeholder="Password"
-          />
-          <span class="icon is-small is-left">
-            <i class="fas fa-lock"></i>
-          </span>
-        </p>
-      </div>
-      <div class="field">
-        <p class="control">
-          <button
-            id="submit"
-            class="button is-warning is-responsive is-outlined"
-          >
-            Login
-          </button>
-        </p>
-      </div>
-    </form>
-  </div>
+  <form id="login-form" class="card-body">
+    <div>
+      <label for="username-input-login" class="form-label">Username</label>
+      <input type="text" id="username-input-login" />
+    </div>
+    <div>
+      <label for="password-input-login" class="form-label">Password</label>
+      <input type="password" id="password-input-login" />
+    </div>
+    <button type="submit" id="login-btn" class="btn">Login!</button>
+    <a type="button" href="/signup">Sign up instead</a>
+  </form>
 </div>
+
+<script src="/js/login.js"></script>

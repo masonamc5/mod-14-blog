@@ -1,37 +1,34 @@
 const express = require('express');
 const router = express.Router();
 const { Post } = require('../models');
+const { withGuard } = require('../utils/auth');
 
-
-router.get('/new-post', (req, res) => {
-  res.render('newpost'); 
-});
-
-router.post("/newpost", async (req, res) => {
+router.get('/', withGuard, async (req, res) => {
   try {
-    const newPost = await Post.create({
-      title: req.body.title,
-      content: req.body.content,
-      user_id: req.session.user_id,
+    const postData = await Post.findAll({
+      where: {
+        userId: req.session.user_id,
+      },
     });
 
-    res.redirect("/dashboard");
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Server error" });
-  } 
-});
+    const posts = postData.map((post) => post.get({ plain: true }));
 
-router.get("/", async (req, res) => {
-  try {
-    
-    const allPosts = await Post.findAll();
-
-    res.render("dashboard", { posts: allPosts });
+    res.render('dashboard', {
+      dashboard: true,
+      posts,
+      loggedIn: req.session.logged_in,
+    });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json(err);
   }
 });
+
+router.get('/new', withGuard, (req, res) => {
+  res.render('newpost', {
+    dashboard: true,
+    loggedIn: req.session.logged_in,
+  });
+});
+
 
 module.exports = router;

@@ -1,34 +1,29 @@
-const loginForm = document.getElementById("login-form");
-console.log("login form is seen");
-
-let loginFormHandler = async (event) => {
+const loginFormHandler = async function (event) {
   event.preventDefault();
 
-  console.log("login form is seen");
+  const usernameEl = document
+    .querySelector('#username-input-login')
+    .value.trim();
+  const passwordEl = document
+    .querySelector('#password-input-login')
+    .value.trim();
 
-  const password = document.getElementById("password").value;
-  const email = document.getElementById("email").value;
+  const response = await fetch('/user/login', {
+    method: 'POST',
+    body: JSON.stringify({
+      username: usernameEl,
+      password: passwordEl,
+    }),
+    headers: { 'Content-Type': 'application/json' },
+  });
 
-  if (email && password) {
-    try {
-      const response = await fetch("/login", {
-        method: "POST",
-        body: JSON.stringify({ email, password }),
-        headers: { "Content-Type": "application/json" },
-      });
-
-      console.log("RESPONSE", response);
-
-      if (response.ok) {
-        window.location.replace("/");
-      } else {
-        alert("Log in Failed");
-      }
-    } catch (error) {
-      console.error("Error logging in:", error);
-      alert("An error occurred while logging in. Please try again later.");
-    }
+  if (response.ok) {
+    document.location.replace('/');
+  } else {
+    alert('Failed to login');
   }
 };
 
-loginForm.addEventListener("submit", loginFormHandler);
+document
+  .querySelector('#login-form')
+  .addEventListener('submit', loginFormHandler);

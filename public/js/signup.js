@@ -1,31 +1,35 @@
-const signupForm = document.getElementById("signup-form");
-
-let signupFormHandler = async (event) => {
+const signupFormHandler = async function (event) {
   event.preventDefault();
 
-  const username = document.getElementById("username").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const usernameEl = document
+    .querySelector('#username-input-signup')
+    .value.trim();
+  const passwordEl = document
+    .querySelector('#password-input-signup')
+    .value.trim();
 
-  if (username && email && password) {
-    try {
-      const response = await fetch("/signup", {
-        method: "POST",
-        body: JSON.stringify({ username, email, password }),
-        headers: { "Content-Type": "application/json" },
-      });
+  if (passwordEl.length >= 8 && usernameEl) {
+    const response = await fetch('/user', {
+      method: 'POST',
+      body: JSON.stringify({
+        username: usernameEl,
+        password: passwordEl,
+      }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-      if (response.ok) {
-        window.location.replace("/"); 
-      } else {
-
-        alert("Signup failed");
-      }
-    } catch (error) {
-      console.error("Error signing up:", error);
-      alert("An error occurred while signing up. Please try again later.");
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert('Failed to sign up');
     }
+  } else {
+    alert(
+      'Please include both a username and password, and make sure your password is at least 8 characters long'
+    );
   }
 };
 
-signupForm.addEventListener("submit", signupFormHandler);
+document
+  .querySelector('#signup-form')
+  .addEventListener('submit', signupFormHandler);

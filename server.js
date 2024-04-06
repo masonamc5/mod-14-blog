@@ -26,10 +26,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use('/dashboard/newpost', dashboardRoutes);
+app.use('/newpost', dashboardRoutes);
 app.use("/", homeRoutes);
 app.use("/user", userRoutes);
-app.use("/dashboard", dashboardRoutes); 
+app.use("/", dashboardRoutes); 
 
 
 app.use((req, res, next) => {
